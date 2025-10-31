@@ -40,7 +40,7 @@ public abstract class BinaryContent : IDisposable
     {
         Argument.AssertNotNull(value, nameof(value));
 
-        return new BinaryDataBinaryContent(value.ToMemory());
+        return new BinaryDataBinaryContent(value.ToMemory(), value.MediaType);
     }
 
     /// <summary>
