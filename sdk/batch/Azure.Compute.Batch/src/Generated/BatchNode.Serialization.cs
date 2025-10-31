@@ -35,21 +35,15 @@ namespace Azure.Compute.Batch
                 throw new FormatException($"The model {nameof(BatchNode)} does not support writing '{format}' format.");
             }
 
-            if (Optional.IsDefined(Id))
-            {
-                writer.WritePropertyName("id"u8);
-                writer.WriteStringValue(Id);
-            }
+            writer.WritePropertyName("id"u8);
+            writer.WriteStringValue(Id);
             if (Optional.IsDefined(Uri))
             {
                 writer.WritePropertyName("url"u8);
                 writer.WriteStringValue(Uri.AbsoluteUri);
             }
-            if (Optional.IsDefined(State))
-            {
-                writer.WritePropertyName("state"u8);
-                writer.WriteStringValue(State.Value.ToString());
-            }
+            writer.WritePropertyName("state"u8);
+            writer.WriteStringValue(State.ToString());
             if (Optional.IsDefined(SchedulingState))
             {
                 writer.WritePropertyName("schedulingState"u8);
@@ -199,7 +193,7 @@ namespace Azure.Compute.Batch
             }
             string id = default;
             Uri url = default;
-            BatchNodeState? state = default;
+            BatchNodeState state = default;
             SchedulingState? schedulingState = default;
             DateTimeOffset? stateTransitionTime = default;
             DateTimeOffset? lastBootTime = default;
@@ -240,10 +234,6 @@ namespace Azure.Compute.Batch
                 }
                 if (property.NameEquals("state"u8))
                 {
-                    if (property.Value.ValueKind == JsonValueKind.Null)
-                    {
-                        continue;
-                    }
                     state = new BatchNodeState(property.Value.GetString());
                     continue;
                 }

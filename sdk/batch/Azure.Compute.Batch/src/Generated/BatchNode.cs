@@ -47,8 +47,15 @@ namespace Azure.Compute.Batch
         private IDictionary<string, BinaryData> _serializedAdditionalRawData;
 
         /// <summary> Initializes a new instance of <see cref="BatchNode"/>. </summary>
-        internal BatchNode()
+        /// <param name="id"> The ID of the Compute Node. Every Compute Node that is added to a Pool is assigned a unique ID. Whenever a Compute Node is removed from a Pool, all of its local files are deleted, and the ID is reclaimed and could be reused for new Compute Nodes. </param>
+        /// <param name="state"> The current state of the Compute Node. The Spot/Low-priority Compute Node has been preempted. Tasks which were running on the Compute Node when it was preempted will be rescheduled when another Compute Node becomes available. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="id"/> is null. </exception>
+        internal BatchNode(string id, BatchNodeState state)
         {
+            Argument.AssertNotNull(id, nameof(id));
+
+            Id = id;
+            State = state;
             RecentTasks = new ChangeTrackingList<BatchTaskInfo>();
             Errors = new ChangeTrackingList<BatchNodeError>();
         }
@@ -78,7 +85,7 @@ namespace Azure.Compute.Batch
         /// <param name="nodeAgentInfo"> Information about the Compute Node agent version and the time the Compute Node upgraded to a new version. </param>
         /// <param name="virtualMachineInfo"> Info about the current state of the virtual machine. </param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
-        internal BatchNode(string id, Uri uri, BatchNodeState? state, SchedulingState? schedulingState, DateTimeOffset? stateTransitionTime, DateTimeOffset? lastBootTime, DateTimeOffset? allocationTime, IPAddress ipAddress, IPAddress ipv6Address, string affinityId, string vmSize, int? totalTasksRun, int? runningTasksCount, int? runningTaskSlotsCount, int? totalTasksSucceeded, IReadOnlyList<BatchTaskInfo> recentTasks, BatchStartTask startTask, BatchStartTaskInfo startTaskInfo, IReadOnlyList<BatchNodeError> errors, bool? isDedicated, BatchNodeEndpointConfiguration endpointConfiguration, BatchNodeAgentInfo nodeAgentInfo, VirtualMachineInfo virtualMachineInfo, IDictionary<string, BinaryData> serializedAdditionalRawData)
+        internal BatchNode(string id, Uri uri, BatchNodeState state, SchedulingState? schedulingState, DateTimeOffset? stateTransitionTime, DateTimeOffset? lastBootTime, DateTimeOffset? allocationTime, IPAddress ipAddress, IPAddress ipv6Address, string affinityId, string vmSize, int? totalTasksRun, int? runningTasksCount, int? runningTaskSlotsCount, int? totalTasksSucceeded, IReadOnlyList<BatchTaskInfo> recentTasks, BatchStartTask startTask, BatchStartTaskInfo startTaskInfo, IReadOnlyList<BatchNodeError> errors, bool? isDedicated, BatchNodeEndpointConfiguration endpointConfiguration, BatchNodeAgentInfo nodeAgentInfo, VirtualMachineInfo virtualMachineInfo, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
             Id = id;
             Uri = uri;
@@ -106,12 +113,17 @@ namespace Azure.Compute.Batch
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
+        /// <summary> Initializes a new instance of <see cref="BatchNode"/> for deserialization. </summary>
+        internal BatchNode()
+        {
+        }
+
         /// <summary> The ID of the Compute Node. Every Compute Node that is added to a Pool is assigned a unique ID. Whenever a Compute Node is removed from a Pool, all of its local files are deleted, and the ID is reclaimed and could be reused for new Compute Nodes. </summary>
         public string Id { get; }
         /// <summary> The URL of the Compute Node. </summary>
         public Uri Uri { get; }
         /// <summary> The current state of the Compute Node. The Spot/Low-priority Compute Node has been preempted. Tasks which were running on the Compute Node when it was preempted will be rescheduled when another Compute Node becomes available. </summary>
-        public BatchNodeState? State { get; }
+        public BatchNodeState State { get; }
         /// <summary> Whether the Compute Node is available for Task scheduling. </summary>
         public SchedulingState? SchedulingState { get; }
         /// <summary> The time at which the Compute Node entered its current state. </summary>

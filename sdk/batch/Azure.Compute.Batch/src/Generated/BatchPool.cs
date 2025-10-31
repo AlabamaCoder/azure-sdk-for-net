@@ -91,7 +91,7 @@ namespace Azure.Compute.Batch
         /// <param name="identity"> The identity of the Batch pool, if configured. The list of user identities associated with the Batch pool. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'. </param>
         /// <param name="upgradePolicy"> The upgrade policy for the Pool. Describes an upgrade policy - automatic, manual, or rolling. </param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
-        internal BatchPool(string id, string displayName, Uri uri, ETag? eTag, DateTimeOffset? lastModified, DateTimeOffset? creationTime, BatchPoolState? state, DateTimeOffset? stateTransitionTime, AllocationState? allocationState, DateTimeOffset? allocationStateTransitionTime, string vmSize, VirtualMachineConfiguration virtualMachineConfiguration, TimeSpan? resizeTimeout, IReadOnlyList<ResizeError> resizeErrors, int? currentDedicatedNodes, int? currentLowPriorityNodes, int? targetDedicatedNodes, int? targetLowPriorityNodes, bool? enableAutoScale, string autoScaleFormula, TimeSpan? autoScaleEvaluationInterval, AutoScaleRun autoScaleRun, bool? enableInterNodeCommunication, NetworkConfiguration networkConfiguration, BatchStartTask startTask, IReadOnlyList<BatchApplicationPackageReference> applicationPackageReferences, int? taskSlotsPerNode, BatchTaskSchedulingPolicy taskSchedulingPolicy, IReadOnlyList<UserAccount> userAccounts, IReadOnlyList<BatchMetadataItem> metadata, BatchPoolStatistics poolStatistics, IReadOnlyList<MountConfiguration> mountConfiguration, BatchPoolIdentity identity, UpgradePolicy upgradePolicy, IDictionary<string, BinaryData> serializedAdditionalRawData)
+        internal BatchPool(string id, string displayName, Uri uri, ETag eTag, DateTimeOffset? lastModified, DateTimeOffset? creationTime, BatchPoolState state, DateTimeOffset? stateTransitionTime, AllocationState? allocationState, DateTimeOffset? allocationStateTransitionTime, string vmSize, VirtualMachineConfiguration virtualMachineConfiguration, TimeSpan? resizeTimeout, IReadOnlyList<ResizeError> resizeErrors, int? currentDedicatedNodes, int? currentLowPriorityNodes, int? targetDedicatedNodes, int? targetLowPriorityNodes, bool? enableAutoScale, string autoScaleFormula, TimeSpan? autoScaleEvaluationInterval, AutoScaleRun autoScaleRun, bool? enableInterNodeCommunication, NetworkConfiguration networkConfiguration, BatchStartTask startTask, IReadOnlyList<BatchApplicationPackageReference> applicationPackageReferences, int? taskSlotsPerNode, BatchTaskSchedulingPolicy taskSchedulingPolicy, IReadOnlyList<UserAccount> userAccounts, IReadOnlyList<BatchMetadataItem> metadata, BatchPoolStatistics poolStatistics, IReadOnlyList<MountConfiguration> mountConfiguration, BatchPoolIdentity identity, UpgradePolicy upgradePolicy, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
             Id = id;
             DisplayName = displayName;
@@ -137,13 +137,13 @@ namespace Azure.Compute.Batch
         /// <summary> The URL of the Pool. </summary>
         public Uri Uri { get; }
         /// <summary> The ETag of the Pool. This is an opaque string. You can use it to detect whether the Pool has changed between requests. In particular, you can be pass the ETag when updating a Pool to specify that your changes should take effect only if nobody else has modified the Pool in the meantime. </summary>
-        public ETag? ETag { get; }
+        public ETag ETag { get; }
         /// <summary> The last modified time of the Pool. This is the last time at which the Pool level data, such as the targetDedicatedNodes or enableAutoscale settings, changed. It does not factor in node-level changes such as a Compute Node changing state. </summary>
         public DateTimeOffset? LastModified { get; }
         /// <summary> The creation time of the Pool. </summary>
         public DateTimeOffset? CreationTime { get; }
         /// <summary> The current state of the Pool. </summary>
-        public BatchPoolState? State { get; }
+        public BatchPoolState State { get; }
         /// <summary> The time at which the Pool entered its current state. </summary>
         public DateTimeOffset? StateTransitionTime { get; }
         /// <summary> Whether the Pool is resizing. </summary>

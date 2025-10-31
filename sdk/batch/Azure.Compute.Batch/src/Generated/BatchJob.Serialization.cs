@@ -34,7 +34,7 @@ namespace Azure.Compute.Batch
                 throw new FormatException($"The model {nameof(BatchJob)} does not support writing '{format}' format.");
             }
 
-            if (options.Format != "W" && Optional.IsDefined(Id))
+            if (options.Format != "W")
             {
                 writer.WritePropertyName("id"u8);
                 writer.WriteStringValue(Id);
@@ -54,10 +54,10 @@ namespace Azure.Compute.Batch
                 writer.WritePropertyName("url"u8);
                 writer.WriteStringValue(Uri.AbsoluteUri);
             }
-            if (options.Format != "W" && Optional.IsDefined(ETag))
+            if (options.Format != "W")
             {
                 writer.WritePropertyName("eTag"u8);
-                writer.WriteStringValue(ETag.Value.ToString());
+                writer.WriteStringValue(ETag.ToString());
             }
             if (options.Format != "W" && Optional.IsDefined(LastModified))
             {
@@ -69,10 +69,10 @@ namespace Azure.Compute.Batch
                 writer.WritePropertyName("creationTime"u8);
                 writer.WriteStringValue(CreationTime.Value, "O");
             }
-            if (options.Format != "W" && Optional.IsDefined(State))
+            if (options.Format != "W")
             {
                 writer.WritePropertyName("state"u8);
-                writer.WriteStringValue(State.Value.ToString());
+                writer.WriteStringValue(State.ToString());
             }
             if (options.Format != "W" && Optional.IsDefined(StateTransitionTime))
             {
@@ -212,10 +212,10 @@ namespace Azure.Compute.Batch
             string displayName = default;
             bool? usesTaskDependencies = default;
             Uri url = default;
-            ETag? eTag = default;
+            ETag eTag = default;
             DateTimeOffset? lastModified = default;
             DateTimeOffset? creationTime = default;
-            BatchJobState? state = default;
+            BatchJobState state = default;
             DateTimeOffset? stateTransitionTime = default;
             BatchJobState? previousState = default;
             DateTimeOffset? previousStateTransitionTime = default;
@@ -268,10 +268,6 @@ namespace Azure.Compute.Batch
                 }
                 if (property.NameEquals("eTag"u8))
                 {
-                    if (property.Value.ValueKind == JsonValueKind.Null)
-                    {
-                        continue;
-                    }
                     eTag = new ETag(property.Value.GetString());
                     continue;
                 }
@@ -295,10 +291,6 @@ namespace Azure.Compute.Batch
                 }
                 if (property.NameEquals("state"u8))
                 {
-                    if (property.Value.ValueKind == JsonValueKind.Null)
-                    {
-                        continue;
-                    }
                     state = new BatchJobState(property.Value.GetString());
                     continue;
                 }

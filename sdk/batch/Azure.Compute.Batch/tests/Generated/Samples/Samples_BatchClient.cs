@@ -2109,7 +2109,9 @@ Settings =
             Response response = client.GetPool("pool", null, DateTimeOffset.Parse("Fri, 28 Apr 2023 02:43:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2123,7 +2125,9 @@ Settings =
             Response response = await client.GetPoolAsync("pool", null, DateTimeOffset.Parse("Fri, 28 Apr 2023 02:43:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2159,7 +2163,9 @@ Settings =
             Response response = client.GetPool("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2173,7 +2179,9 @@ Settings =
             Response response = await client.GetPoolAsync("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2209,7 +2217,9 @@ Settings =
             Response response = client.GetPool("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2223,7 +2233,9 @@ Settings =
             Response response = await client.GetPoolAsync("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2259,7 +2271,9 @@ Settings =
             Response response = client.GetPool("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2273,7 +2287,9 @@ Settings =
             Response response = await client.GetPoolAsync("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2309,7 +2325,9 @@ Settings =
             Response response = client.GetPool("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2323,7 +2341,9 @@ Settings =
             Response response = await client.GetPoolAsync("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2359,7 +2379,9 @@ Settings =
             Response response = client.GetPool("mypool001", null, DateTimeOffset.Parse("Wed, 14 Jun 2023 06:39:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2373,7 +2395,9 @@ Settings =
             Response response = await client.GetPoolAsync("mypool001", null, DateTimeOffset.Parse("Wed, 14 Jun 2023 06:39:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2409,7 +2433,9 @@ Settings =
             Response response = client.GetPool("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2423,7 +2449,9 @@ Settings =
             Response response = await client.GetPoolAsync("pool", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2459,7 +2487,9 @@ Settings =
             Response response = client.GetPool("mypool001", null, DateTimeOffset.Parse("Wed, 23 Aug 2023 08:42:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2473,7 +2503,9 @@ Settings =
             Response response = await client.GetPoolAsync("mypool001", null, DateTimeOffset.Parse("Wed, 23 Aug 2023 08:42:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2509,7 +2541,9 @@ Settings =
             Response response = client.GetPool("pool", null, DateTimeOffset.Parse("Thu, 11 May 2023 08:08:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2523,7 +2557,9 @@ Settings =
             Response response = await client.GetPoolAsync("pool", null, DateTimeOffset.Parse("Thu, 11 May 2023 08:08:01 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -2915,6 +2951,9 @@ Settings =
             Response response = client.GetJob("jobId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
             Console.WriteLine(result.GetProperty("poolInfo").ToString());
         }
 
@@ -2929,6 +2968,9 @@ Settings =
             Response response = await client.GetJobAsync("jobId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
             Console.WriteLine(result.GetProperty("poolInfo").ToString());
         }
 
@@ -3789,6 +3831,9 @@ Value = "myvalue",
             Response response = client.GetJobSchedule("jobScheduleId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
             Console.WriteLine(result.GetProperty("jobSpecification").GetProperty("poolInfo").ToString());
         }
 
@@ -3803,6 +3848,9 @@ Value = "myvalue",
             Response response = await client.GetJobScheduleAsync("jobScheduleId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
             Console.WriteLine(result.GetProperty("jobSpecification").GetProperty("poolInfo").ToString());
         }
 
@@ -5775,7 +5823,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             Response response = client.GetTask("jobId", "taskId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -5789,7 +5839,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             Response response = await client.GetTaskAsync("jobId", "taskId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("eTag").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -6205,7 +6257,8 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             Response response = client.GetNode("poolId", "tvm-1695681911_2-20161122t193202z", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -6219,7 +6272,8 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             Response response = await client.GetNodeAsync("poolId", "tvm-1695681911_2-20161122t193202z", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -6255,7 +6309,8 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             Response response = client.GetNode("dualstackpool", "tvmps_5d8adec89961dcc011329b38df999a841f6cc815a5710678b741f04b33556ed2_d", null, DateTimeOffset.Parse("Fri, 27 Jun 2025 08:55:44 GMT"), null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -6269,7 +6324,8 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             Response response = await client.GetNodeAsync("dualstackpool", "tvmps_5d8adec89961dcc011329b38df999a841f6cc815a5710678b741f04b33556ed2_d", null, DateTimeOffset.Parse("Fri, 27 Jun 2025 08:55:44 GMT"), null, null);
 
             JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
-            Console.WriteLine(result.ToString());
+            Console.WriteLine(result.GetProperty("id").ToString());
+            Console.WriteLine(result.GetProperty("state").ToString());
         }
 
         [Test]
@@ -6799,7 +6855,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             foreach (BinaryData item in client.GetPools(null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
-                Console.WriteLine(result.ToString());
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
             }
         }
 
@@ -6814,7 +6872,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             await foreach (BinaryData item in client.GetPoolsAsync(null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
-                Console.WriteLine(result.ToString());
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
             }
         }
 
@@ -6973,6 +7033,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             foreach (BinaryData item in client.GetJobs(null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
                 Console.WriteLine(result.GetProperty("poolInfo").ToString());
             }
         }
@@ -6988,6 +7051,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             await foreach (BinaryData item in client.GetJobsAsync(null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
                 Console.WriteLine(result.GetProperty("poolInfo").ToString());
             }
         }
@@ -7029,6 +7095,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             foreach (BinaryData item in client.GetJobsFromSchedules("jobScheduleId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
                 Console.WriteLine(result.GetProperty("poolInfo").ToString());
             }
         }
@@ -7044,6 +7113,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             await foreach (BinaryData item in client.GetJobsFromSchedulesAsync("jobScheduleId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
                 Console.WriteLine(result.GetProperty("poolInfo").ToString());
             }
         }
@@ -7141,6 +7213,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             foreach (BinaryData item in client.GetJobSchedules(null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
                 Console.WriteLine(result.GetProperty("jobSpecification").GetProperty("poolInfo").ToString());
             }
         }
@@ -7156,6 +7231,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             await foreach (BinaryData item in client.GetJobSchedulesAsync(null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
                 Console.WriteLine(result.GetProperty("jobSpecification").GetProperty("poolInfo").ToString());
             }
         }
@@ -7197,7 +7275,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             foreach (BinaryData item in client.GetTasks("jobId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
-                Console.WriteLine(result.ToString());
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
             }
         }
 
@@ -7212,7 +7292,9 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             await foreach (BinaryData item in client.GetTasksAsync("jobId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
-                Console.WriteLine(result.ToString());
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("eTag").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
             }
         }
 
@@ -7365,7 +7447,8 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             foreach (BinaryData item in client.GetNodes("poolId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
-                Console.WriteLine(result.ToString());
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
             }
         }
 
@@ -7380,7 +7463,8 @@ new BatchTaskCreateOptions("simple3", "cmd /c dir /s")
             await foreach (BinaryData item in client.GetNodesAsync("poolId", null, DateTimeOffset.Parse("Fri, 17 Feb 2025 00:00:00 GMT"), null, null, null, null))
             {
                 JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
-                Console.WriteLine(result.ToString());
+                Console.WriteLine(result.GetProperty("id").ToString());
+                Console.WriteLine(result.GetProperty("state").ToString());
             }
         }
 
